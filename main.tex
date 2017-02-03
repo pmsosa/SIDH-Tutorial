@@ -1,0 +1,77 @@
+\documentclass[10pt,twocolumn]{article} %twocolumn
+
+%opening
+\title{Introduction to Supersingular Isogenies Diffie-Hellman}
+\author{Pedro M. Sosa}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The aim of this paper we will explore the construction and execution of the Supersingular Isogenies Diffie-Hellman key exchange algorithm (SIDH-KEX). 
+\end{abstract}
+
+\section{Background}
+In the last couple of years, there has been an important push towards the study and implementation of Post-Quantum cryptographic protocols. \textbf{[TODO]}
+
+\section{Motivation}
+
+\section{Security and Efficiency}
+
+
+\section{Preliminaries}
+
+In this section we will discuss some of the mathematical constructs and finer details necesesary to further understand the SIDH-KEX
+
+\paragraph{Elliptic Curves}
+Similar to other elliptic curve cryptographic schemes, we will assume our chosen elliptic curve $E$ over $F_{p^2}$ to be non-singular and of the Weierstrass form: $y^2 = x^3 + ax + b$.
+
+\paragraph{Isogeny} An isogeny is a surjective and homomorphic structure preserving function that maps two groups together. In the case of elliptic curves case, a  isogeny $\phi$ will map points on the domain curve $E$ to points on a co-domain curve $E'$.
+
+\paragraph{j-Invariant}
+The j-invariant is a descriptor that can be computed for any particular curve using said curves parameters. Most importantly, isomorphic curves will always share the same j-invariant value. The exact equation for the j-invariant will vary depending on the underlying form of the elliptic curve. In the case of elliptic curves in the Weierstrass form, the j-invariant is calculated as follows:
+
+\begin{center}
+	\centering
+	$j(E)=1728\cdot\frac{4a^3}{4a^3+27b^2}$
+\end{center}
+
+
+\paragraph{Supersingular curves} While it might seem a bit confusing, supersingular curves are non-singular elliptic curves as one would expect to find in other elliptic curve scheme. The term \textit{``supersingular}" actually refers to the fact that they have "singular" values of the j-invariant and it's Hasse invariant is 0. \textbf{[TODO: Refer to section blah for some proposed curves]}
+
+\section{Supersingular Isogeny Diffie-Hellman}
+
+\subsection{Setup}
+Initially there will be 4 global public parameters:
+\par - A prime $p$ 
+\par - A supersingular elliptic curve $E$ over $F_{p^2}$
+\par - Four fixed points $P_a,Q_a,P_b,Q_b$ on $E$ 
+
+\subsection{Key Exchange}
+- \textbf{Alice} 
+\newline
+1. Randomly generate $ m_{a},n_{a}$
+\newline
+2. $R_{a} = m_{a}\cdot P_{a}+n_{a}\cdot Q_{a}$
+\newline
+3. Create an isogeny mapping using $R_{a}$ such that $\phi_{a}: E \rightarrow E_{a}$
+\newline
+4. $P'_{b},Q'_{b}=\phi_{a}(P_{b}),\phi_{a}(Q_{b})$
+\newline
+5. Send $E_{a},P'_{b},Q'_{b}$
+
+- \textbf{Bob}
+\textbf{[TODO]}
+
+\subsection{Parameter Selection}
+The latest work by Costello et al. \cite{bibid}, defined the curve $E = y^2+x^3 +x$ and the prime $p = 2^372\cdot 3^239-1$. Furthermore they established the four points on $E$ to be:
+- $P_{a} = [3^239](11,\sqrt{11^3+11})$ \newline
+- $Q_a=\tau(P_a)$ \newline
+- $P_b=[2^372](6,\sqrt{6^3+6})$ \newline
+- $Q_b=\tau(P_b)$ \newline
+where $\tau$ is a distortion map from $E(F_{p^2})\rightarrow E(F_{p^2}) : (x,y) \rightarrow (-x,iy)$. This was done purposely so as to avoid having to store both $Q_a$ and $Q_b$ in memory and instead derive them from their respective $P_i$ points.
+
+\section{Further Work}
+
+\end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2016.1.24)  2 FEB 2017 22:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2016.1.24)  3 FEB 2017 21:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -44,46 +44,76 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 9.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 28.
+(Font)              <7> on input line 16.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 28.
- [1{c:/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+(Font)              <5> on input line 16.
+
+Underfull \hbox (badness 1137) in paragraph at lines 18--19
+\OT1/cmr/m/n/10 to-wards the study and im-ple-men-ta-tion of Post-
+ []
+
+[1{c:/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
+Underfull \hbox (badness 3557) in paragraph at lines 47--48
+\OT1/cmr/m/n/10 Intuitively, the SIDH key ex-change works by
+ []
 
-LaTeX Warning: Citation `bibid' on page 2 undefined on input line 68.
+[2] (./main.bbl
+Underfull \hbox (badness 1137) in paragraph at lines 4--6
+\OT1/cmr/m/n/10 cryp-tog-ra-phy,'' in \OT1/cmr/m/it/10 Post-quantum cryp-tog-ra
+-phy\OT1/cmr/m/n/10 ,
+ []
 
-[2
 
-] (./main.aux)
+Underfull \hbox (badness 1472) in paragraph at lines 8--11
+[]\OT1/cmr/m/n/10 D. Jao and L. De Feo, \OT1/cmr/m/it/10 To-wards Quantum-
+ []
 
-LaTeX Warning: There were undefined references.
 
- ) 
+Underfull \hbox (badness 1102) in paragraph at lines 13--15
+\OT1/cmr/m/n/10 hellman.'' Cryp-tol-ogy ePrint Archive, Re-port
+ []
+
+
+Underfull \hbox (badness 4699) in paragraph at lines 30--33
+[]\OT1/cmr/m/n/10 D. Jao and V. Soukharev, ``Isogeny-based
+ []
+
+
+Underfull \hbox (badness 2088) in paragraph at lines 35--38
+[]\OT1/cmr/m/n/10 X. Sun, H. Tian, and Y. Wang, ``To-ward
+ []
+
+) [3
+
+] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 235 strings out of 493054
- 2485 string characters out of 6138321
- 59374 words of memory out of 5000000
- 3832 multiletter control sequences out of 15000+600000
+ 247 strings out of 493054
+ 2659 string characters out of 6138321
+ 61374 words of memory out of 5000000
+ 3841 multiletter control sequences out of 15000+600000
  8241 words of font info for 29 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 23i,7n,19p,422b,207s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
-live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2015
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2015/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2015/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2015/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr12.pfb><c:/texlive/2015/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr17.pfb><c:/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.p
-fb><c:/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texl
-ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2015/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2015/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on main.pdf (2 pages, 138913 bytes).
+ 24i,8n,19p,594b,207s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
+10.pfb><c:/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c
+:/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive
+/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2015/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2015/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2015/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr17.pfb><c:/texlive/2015/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr5.pfb><c:/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+6.pfb><c:/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/t
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2015
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2015/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2015/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmti10.pfb>
+Output written on main.pdf (3 pages, 172114 bytes).
 PDF statistics:
- 59 PDF objects out of 1000 (max. 8388607)
- 42 compressed objects within 1 object stream
+ 70 PDF objects out of 1000 (max. 8388607)
+ 50 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

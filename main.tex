@@ -2,27 +2,30 @@
 
 %opening
 \title{Introduction to Supersingular Isogenies Diffie-Hellman}
-\author{Pedro M. Sosa}
+\author{Pedro Miguel Sosa}
 
 \begin{document}
 
 \maketitle
 
 \begin{abstract}
-The aim of this paper we will explore the construction and execution of the Supersingular Isogenies Diffie-Hellman key exchange algorithm (SIDH-KEX). 
+This paper aims to give researchers an approachable introduction to the Supersingular Isogneies Diffie-Hellman key exchange (SIDH-KEX). SIDH is one of the few post-quantum key exchange algorithms based on elliptic curves that has shown potential due to it's small key sizes and quick timing. This paper will briefly describe the history and motivation of SIDH. Furthermore, we will present a simple construction of the algorithm along with the mathematical background needed to understand it. Lastly, we will present the recommended parameters to use for potential implementations.
 \end{abstract}
 
 \section{Background}
-In the last couple of years, there has been an important push towards the study and implementation of Post-Quantum cryptographic protocols. \textbf{[TODO]}
-
-\section{Motivation}
+As studies in the area of quantum computing seem to yield promising results, cryptography researchers are seeking new cryptosystems that could withstand attacks from such machines. While quantum computers don't affect secret key cryptography as much\footnote{It is enough for most secret key cryptographic schemes to increase their key sizes to provide protection against quantum adversaries.}, most of the popular public key cryptosystems become vulnerable \cite{bernstein2009introduction}. 
+\par Most popular public key cryptosystems used today rely on the hardness of the factorization problem. For classical machines, the best known attacks would take exponential time, however, quantum computers are able to do factoring in polynomial time using Shor's algorithm.
+\par As a result, there has been an important push towards the study and implementation of Post-Quantum cryptographic protocols in these past few years. This has yielded many different Post-Quantum Cryptographic (PQC) schemes based on lattices, codes, hashes, multivariate equations, and most recently elliptic curves.
+\par In this paper we will focus on Supersingular Isogenies Diffie-Hellman (SIDH), which is the only PQC algorithm based on elliptic curves. It was created in 2011 by De Feo, Jao and Plut \cite{Jao2011} and has since been implemented and optimized by others. In 2016, researchers at Microsoft published a version of SIDH which ran in constant time and used public keys of size 564 bytes, showing that SIDH had "strong potential as a PQC candidate"\cite{costello2016}.
 
 \section{Security and Efficiency}
-
+\paragraph{Security} Although both ECDH and SIDH use elliptic curves, their underlying problem is different. ECDH's hardness rests upon the discrete logarithm problem, whereas SIDH's hardness rests up the difficulty of finding the isogeny mapping between two supersingular elliptic curves with the same number of points. 
+\par It has been proven \cite{delfs2016computing,biasse2014quantum} that the security for classical computers is $O(p^\frac{1}{4})$, while the security for quantum computers has been theorized to be  $O(p^\frac{1}{6})$
+\paragraph{Efficiency} SIDH has become substantially more efficient since it's release in 2011. The latest implementations published in 2016 runs in constant time and has a public key size of 564 bytes. This key size is among the smallest in comparison to other PQC key exchange alternatives. This latest implementation has been added to the Open Quantum Safe's "OpenSSL" project to be used and tested with Internet applications.\cite{openssl}
 
 \section{Preliminaries}
 
-In this section we will discuss some of the mathematical constructs and finer details necesesary to further understand the SIDH-KEX
+In this section we will discuss some of the mathematical constructs and finer details necessary to further understand the SIDH-KEX.
 
 \paragraph{Elliptic Curves}
 Similar to other elliptic curve cryptographic schemes, we will assume our chosen elliptic curve $E$ over $F_{p^2}$ to be non-singular and of the Weierstrass form: $y^2 = x^3 + ax + b$.
@@ -38,40 +41,59 @@ The j-invariant is a descriptor that can be computed for any particular curve us
 \end{center}
 
 
-\paragraph{Supersingular curves} While it might seem a bit confusing, supersingular curves are non-singular elliptic curves as one would expect to find in other elliptic curve scheme. The term \textit{``supersingular}" actually refers to the fact that they have "singular" values of the j-invariant and it's Hasse invariant is 0. \textbf{[TODO: Refer to section blah for some proposed curves]}
+\paragraph{Supersingular curves} While it might seem a bit confusing, supersingular curves are non-singular elliptic curves as one would expect to find in other elliptic curve scheme. The term \textit{``supersingular}" actually refers to the fact that they have "singular" values of the j-invariant and it's Hasse invariant is 0. Refer to section \ref{sec:params} for a concrete curve suggestion.
 
 \section{Supersingular Isogeny Diffie-Hellman}
+Intuitively, the SIDH key exchange works by \textbf{[TODO]}
 
-\subsection{Setup}
+\subsection{Public Parameters}
 Initially there will be 4 global public parameters:
 \par - A prime $p$ 
 \par - A supersingular elliptic curve $E$ over $F_{p^2}$
 \par - Four fixed points $P_a,Q_a,P_b,Q_b$ on $E$ 
 
 \subsection{Key Exchange}
-- \textbf{Alice} 
+%3. Create an isogeny mapping using $R_{a}$ such that $\phi_{a}: E \rightarrow E_{a}$
+
+- \textbf{Party A} 
 \newline
 1. Randomly generate $ m_{a},n_{a}$
 \newline
 2. $R_{a} = m_{a}\cdot P_{a}+n_{a}\cdot Q_{a}$
 \newline
-3. Create an isogeny mapping using $R_{a}$ such that $\phi_{a}: E \rightarrow E_{a}$
+3. Using $R_{a}$, create an isogeny $\phi_{a}: E \rightarrow E_{a}$
 \newline
 4. $P'_{b},Q'_{b}=\phi_{a}(P_{b}),\phi_{a}(Q_{b})$
 \newline
-5. Send $E_{a},P'_{b},Q'_{b}$
-
-- \textbf{Bob}
+5. Send $E_{a},P'_{b},Q'_{b}$ to Party B
+\newline 
+- \textbf{Party B}
+\textbf{[TODO]}
+\newline 
+- \textbf{Party A}
+\textbf{[TODO]}
+\newline 
+- \textbf{Party B}
 \textbf{[TODO]}
 
 \subsection{Parameter Selection}
-The latest work by Costello et al. \cite{bibid}, defined the curve $E = y^2+x^3 +x$ and the prime $p = 2^372\cdot 3^239-1$. Furthermore they established the four points on $E$ to be:
+\label{sec:params}
+The latest work by Costello et al. \cite{costello2016}, defined the curve $E = y^2+x^3 +x$ and the prime $p = 2^372\cdot 3^239-1$. Furthermore they established the four points on $E$ to be:
 - $P_{a} = [3^239](11,\sqrt{11^3+11})$ \newline
 - $Q_a=\tau(P_a)$ \newline
 - $P_b=[2^372](6,\sqrt{6^3+6})$ \newline
 - $Q_b=\tau(P_b)$ \newline
 where $\tau$ is a distortion map from $E(F_{p^2})\rightarrow E(F_{p^2}) : (x,y) \rightarrow (-x,iy)$. This was done purposely so as to avoid having to store both $Q_a$ and $Q_b$ in memory and instead derive them from their respective $P_i$ points.
 
-\section{Further Work}
+\section{Future Work}
+While SIDH seem very promising, there are still some issues that remain to be solved. Current implementations assume both parties are honest peers, and thus, an misbehaving/attacking party could leak information and weaken then security of the scheme. Another issue is the lack of crypto-analitic research done for this scheme, as the literature in which one can rely is rather limited.
+\par Being a relatively new field, there are still many unknowns as to what supersingular isogenies can also be used for. Aside from key exchange, some researchers have also worked on applying supersingular curves to build digital signature schemes \cite{jao2014isogeny,sun2014toward}. 
+\par However, with the recent promising developments in SIDH, work with supersingular curves is bound to gather more research in the upcoming years. 
+
+
+
+\bibliographystyle{ieeetr}
+\bibliography{main}
 
 \end{document}
+

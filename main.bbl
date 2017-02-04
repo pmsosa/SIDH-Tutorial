@@ -1,0 +1,39 @@
+\begin{thebibliography}{1}
+
+\bibitem{bernstein2009introduction}
+D.~J. Bernstein, ``Introduction to post-quantum cryptography,'' in {\em
+  Post-quantum cryptography}, pp.~1--14, Springer, 2009.
+
+\bibitem{Jao2011}
+D.~Jao and L.~De~Feo, {\em Towards Quantum-Resistant Cryptosystems from
+  Supersingular Elliptic Curve Isogenies}, pp.~19--34.
+\newblock Berlin, Heidelberg: Springer Berlin Heidelberg, 2011.
+
+\bibitem{costello2016}
+C.~Costello, P.~Longa, and M.~Naehrig, ``Efficient algorithms for supersingular
+  isogeny diffie-hellman.'' Cryptology ePrint Archive, Report 2016/413, 2016.
+
+\bibitem{delfs2016computing}
+C.~Delfs and S.~D. Galbraith, ``Computing isogenies between supersingular
+  elliptic curves over $\{$$\backslash$ mathbb $\{$F$\}$$\}$ \_p,'' {\em
+  Designs, Codes and Cryptography}, vol.~78, no.~2, pp.~425--440, 2016.
+
+\bibitem{biasse2014quantum}
+J.-F. Biasse, D.~Jao, and A.~Sankar, ``A quantum algorithm for computing
+  isogenies between supersingular elliptic curves,'' in {\em International
+  Conference in Cryptology in India}, pp.~428--442, Springer, 2014.
+
+\bibitem{openssl}
+D.~Stebila, ``openssl,'' 2016.
+
+\bibitem{jao2014isogeny}
+D.~Jao and V.~Soukharev, ``Isogeny-based quantum-resistant undeniable
+  signatures,'' in {\em International Workshop on Post-Quantum Cryptography},
+  pp.~160--179, Springer, 2014.
+
+\bibitem{sun2014toward}
+X.~Sun, H.~Tian, and Y.~Wang, ``Toward quantum-resistant strong designated
+  verifier signature,'' {\em International Journal of Grid and Utility
+  Computing 4}, vol.~5, no.~2, pp.~80--86, 2014.
+
+\end{thebibliography}

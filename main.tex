@@ -16,12 +16,12 @@ This paper aims to give researchers an approachable introduction to the Supersin
 As studies in the area of quantum computing seem to yield promising results, cryptography researchers are seeking new cryptosystems that could withstand attacks from such machines. While quantum computers don't affect secret key cryptography as much\footnote{It is enough for most secret key cryptographic schemes to increase their key sizes to provide protection against quantum adversaries.}, most of the popular public key cryptosystems become vulnerable \cite{bernstein2009introduction}. 
 \par Most popular public key cryptosystems used today rely on the hardness of the factorization problem. For classical machines, the best known attacks would take exponential time, however, quantum computers are able to do factoring in polynomial time using Shor's algorithm.
 \par As a result, there has been an important push towards the study and implementation of Post-Quantum cryptographic protocols in these past few years. This has yielded many different Post-Quantum Cryptographic (PQC) schemes based on lattices, codes, hashes, multivariate equations, and most recently elliptic curves.
-\par In this paper we will focus on Supersingular Isogenies Diffie-Hellman (SIDH), which is the only PQC algorithm based on elliptic curves. It was created in 2011 by De Feo, Jao and Plut \cite{Jao2011} and has since been implemented and optimized by others. In 2016, researchers at Microsoft published a version of SIDH which ran in constant time and used public keys of size 564 bytes, showing that SIDH had "strong potential as a PQC candidate"\cite{costello2016}.
+\par In this paper we will focus on Supersingular Isogenies Diffie-Hellman (SIDH), which is the only PQC algorithm based on elliptic curves. It was created in 2011 by De Feo, Jao and Plut \cite{Jao2011} and has since been implemented and optimized by others. In 2016, researchers at Microsoft published a version of SIDH which ran in constant time and used public keys of size 564 bytes, showing that SIDH had ``strong potential as a PQC candidate"\cite{costello2016}.
 
 \section{Security and Efficiency}
 \paragraph{Security} Although both ECDH and SIDH use elliptic curves, their underlying problem is different. ECDH's hardness rests upon the discrete logarithm problem, whereas SIDH's hardness rests up the difficulty of finding the isogeny mapping between two supersingular elliptic curves with the same number of points. 
-\par It has been proven \cite{delfs2016computing,biasse2014quantum} that the security for classical computers is $O(p^\frac{1}{4})$, while the security for quantum computers has been theorized to be  $O(p^\frac{1}{6})$
-\paragraph{Efficiency} SIDH has become substantially more efficient since it's release in 2011. The latest implementations published in 2016 runs in constant time and has a public key size of 564 bytes. This key size is among the smallest in comparison to other PQC key exchange alternatives. This latest implementation has been added to the Open Quantum Safe's "OpenSSL" project to be used and tested with Internet applications.\cite{openssl}
+\par It has been proven \cite{delfs2016computing,biasse2014quantum} that the security for classical computers is $O(p^\frac{1}{4})$, while the security for quantum computers has been theorized to be  $O(p^\frac{1}{6})$.
+\paragraph{Efficiency} SIDH has become substantially more efficient since it's release in 2011. The latest implementations published in 2016 runs in constant time and has a public key size of 564 bytes. This key size is among the smallest in comparison to other PQC key exchange alternatives. This latest implementation has been added to the Open Quantum Safe's ``OpenSSL" project to be used and tested with Internet applications \cite{openssl}.
 
 \section{Preliminaries}
 
@@ -41,7 +41,7 @@ The j-invariant is a descriptor that can be computed for any particular curve us
 \end{center}
 
 
-\paragraph{Supersingular curves} While it might seem a bit confusing, supersingular curves are non-singular elliptic curves as one would expect to find in other elliptic curve scheme. The term \textit{``supersingular}" actually refers to the fact that they have "singular" values of the j-invariant and it's Hasse invariant is 0. Refer to section \ref{sec:params} for a concrete curve suggestion.
+\paragraph{Supersingular curves} While it might seem a bit confusing, supersingular curves are non-singular elliptic curves as one would expect to find in other elliptic curve scheme. The term \textit{``supersingular}" actually refers to the fact that they have ``singular" values of the j-invariant and it's Hasse invariant is 0. Refer to section \ref{sec:params} for a concrete curve suggestion.
 
 \section{Supersingular Isogeny Diffie-Hellman}
 Intuitively, the SIDH key exchange works by \textbf{[TODO]}
@@ -65,16 +65,43 @@ Initially there will be 4 global public parameters:
 \newline
 4. $P'_{b},Q'_{b}=\phi_{a}(P_{b}),\phi_{a}(Q_{b})$
 \newline
-5. Send $E_{a},P'_{b},Q'_{b}$ to Party B
-\newline 
+5. Send $(E_{a}, P'_{b}, Q'_{b})$ to Party B
+\newline
+6. Receive $(E_b, P'_a, Q'_a)$ from Party B
+\newline
+7. Calculate $S_{ba} = m_a(P'_a)+n_a(Q'_a)$ 
+\newline
+8. Use $S_{ba}$ to produce an isogeny mapping $\psi_{ba}$
+\newline
+9. Use $\psi_{ba}$ to compute $E_{ba}$ which is isogenous to $E$.
+\newline
+10. Compute $k$ = j-invariant($j_{ab}$) of curve $E_{ab}$
+\newline
+\newline
 - \textbf{Party B}
-\textbf{[TODO]}
-\newline 
-- \textbf{Party A}
-\textbf{[TODO]}
-\newline 
-- \textbf{Party B}
-\textbf{[TODO]}
+\newline
+1. Randomly generate $ m_{b},n_{b}$
+\newline
+2. $R_{b} = m_{b}\cdot P_{b}+n_{b}\cdot Q_{b}$
+\newline
+3. Using $R_{b}$, create an isogeny $\phi_{b}: E \rightarrow E_{b}$
+\newline
+4. $P'_{a},Q'_{a}=\phi_{b}(P_{a}),\phi_{b}(Q_{a})$
+\newline
+5. Send $(E_B, P'_{a}, Q'_{a})$ to Party A
+\newline
+6. Receive $(E_a, P'_b, Q'_b)$ from Party A
+\newline
+7. Calculate $S_{ab} = m_b(P'_b)+n_b(Q'_b)$ 
+\newline
+8. Use $S_{ab}$ to produce an isogeny mapping $\psi_{ab}$
+\newline
+9. Use $\psi_{ab}$ to compute $E_{ab}$ which is isogenous to $E$.
+\newline
+10. Compute $k$ = j-invariant($j_{ba}$) of curve $E_{ba}$
+\newline
+
+\par Notice that since both curves are isogneous to each other, they will have the same j-invariant. As such, the shared key $k$ calculated by both parties will be the same.
 
 \subsection{Parameter Selection}
 \label{sec:params}

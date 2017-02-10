@@ -44,7 +44,7 @@ The j-invariant is a descriptor that can be computed for any particular curve us
 \paragraph{Supersingular curves} While it might seem a bit confusing, supersingular curves are non-singular elliptic curves as one would expect to find in other elliptic curve scheme. The term \textit{``supersingular}" actually refers to the fact that they have ``singular" values of the j-invariant and it's Hasse invariant is 0. Refer to section \ref{sec:params} for a concrete curve suggestion.
 
 \section{Supersingular Isogeny Diffie-Hellman}
-Intuitively, the SIDH key exchange works by \textbf{[TODO]}
+Intuitively, the SIDH key exchange works by having both parties generate a secret key, which will be an isogeny based on the known public curve $E$ and points $P_a,Q_a,P_b,Q_b$ (which reside on $E$). Then each party will create and exchange a new curve derived from their secret isogenies. This new curves can be considered the ``public keys". Afterwards, by merging their ``private key" isogenies and the other party's ``public key" curve, each party will be able to generate a final curve. For both parties, these final curves will have the same j-invariant (since they are isogenous with respect to each other). As such the value of this j-invariant becomes the shared secret.
 
 \subsection{Public Parameters}
 Initially there will be 4 global public parameters:
@@ -75,7 +75,7 @@ Initially there will be 4 global public parameters:
 \newline
 9. Use $\psi_{ba}$ to compute $E_{ba}$ which is isogenous to $E$.
 \newline
-10. Compute $k$ = j-invariant($j_{ab}$) of curve $E_{ab}$
+10. Compute $k$ = $j_{ab}$ = j-invariant($E_{ab}$)
 \newline
 \newline
 - \textbf{Party B}
@@ -98,17 +98,17 @@ Initially there will be 4 global public parameters:
 \newline
 9. Use $\psi_{ab}$ to compute $E_{ab}$ which is isogenous to $E$.
 \newline
-10. Compute $k$ = j-invariant($j_{ba}$) of curve $E_{ba}$
+10. Compute $k$ = $j_{ba}$ = j-invariant($E_{ba}$)
 \newline
 
 \par Notice that since both curves are isogneous to each other, they will have the same j-invariant. As such, the shared key $k$ calculated by both parties will be the same.
 
 \subsection{Parameter Selection}
 \label{sec:params}
-The latest work by Costello et al. \cite{costello2016}, defined the curve $E = y^2+x^3 +x$ and the prime $p = 2^372\cdot 3^239-1$. Furthermore they established the four points on $E$ to be:
-- $P_{a} = [3^239](11,\sqrt{11^3+11})$ \newline
+The latest work by Costello et al. \cite{costello2016}, defined the curve $E = y^2+x^3 +x$ and the prime $p = 2^{372}\cdot 3^{239}-1$. Furthermore they established the four points on $E$ to be:
+- $P_{a} = [3^{239}](11,\sqrt{11^3+11})$ \newline
 - $Q_a=\tau(P_a)$ \newline
-- $P_b=[2^372](6,\sqrt{6^3+6})$ \newline
+- $P_b=[2^{372}](6,\sqrt{6^3+6})$ \newline
 - $Q_b=\tau(P_b)$ \newline
 where $\tau$ is a distortion map from $E(F_{p^2})\rightarrow E(F_{p^2}) : (x,y) \rightarrow (-x,iy)$. This was done purposely so as to avoid having to store both $Q_a$ and $Q_b$ in memory and instead derive them from their respective $P_i$ points.
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2016.1.24)  9 FEB 2017 17:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2016.1.24)  10 FEB 2017 02:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -56,11 +56,6 @@ Underfull \hbox (badness 1137) in paragraph at lines 18--19
 
 
 ]
-Underfull \hbox (badness 3557) in paragraph at lines 47--48
-\OT1/cmr/m/n/10 Intuitively, the SIDH key ex-change works by
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 58--103
 
  []
@@ -100,11 +95,11 @@ Underfull \hbox (badness 2088) in paragraph at lines 35--38
 Here is how much of TeX's memory you used:
  247 strings out of 493054
  2659 string characters out of 6138321
- 63374 words of memory out of 5000000
+ 62374 words of memory out of 5000000
  3841 multiletter control sequences out of 15000+600000
  8241 words of font info for 29 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 24i,8n,19p,594b,207s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 24i,8n,19p,692b,207s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmbx10.pfb><c:/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pf
 b><c:/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/tex
@@ -118,7 +113,7 @@ c:/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/
 2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2015/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2015/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on main.pdf (3 pages, 174114 bytes).
+Output written on main.pdf (3 pages, 174190 bytes).
 PDF statistics:
  70 PDF objects out of 1000 (max. 8388607)
  50 compressed objects within 1 object stream

@@ -1,5 +1,5 @@
 \documentclass[10pt,twocolumn]{article} %twocolumn
-
+\usepackage{graphicx}
 %opening
 \title{Introduction to Supersingular Isogenies Diffie-Hellman}
 \author{Pedro Miguel Sosa}
@@ -9,7 +9,7 @@
 \maketitle
 
 \begin{abstract}
-This paper aims to give researchers an approachable introduction to the Supersingular Isogneies Diffie-Hellman key exchange (SIDH-KEX). SIDH is one of the few post-quantum key exchange algorithms based on elliptic curves that has shown potential due to it's small key sizes and quick timing. This paper will briefly describe the history and motivation of SIDH. Furthermore, we will present a simple construction of the algorithm along with the mathematical background needed to understand it. Lastly, we will present the recommended parameters to use for potential implementations.
+This paper aims to give researchers an approachable introduction to the Supersingular Isogeny Diffie-Hellman key exchange (SIDH-KEX). SIDH is one of the few post-quantum key exchange algorithms based on elliptic curves that has shown potential due to it's small key sizes and quick timing. This paper will briefly describe the history and motivation of SIDH. Furthermore, we will present a simple construction of the algorithm along with the mathematical background needed to understand it. Lastly, we will present the recommended parameters to use for potential implementations.
 \end{abstract}
 
 \section{Background}
@@ -53,7 +53,6 @@ Initially there will be 4 global public parameters:
 \par - Four fixed points $P_a,Q_a,P_b,Q_b$ on $E$ 
 
 \subsection{Key Exchange}
-%3. Create an isogeny mapping using $R_{a}$ such that $\phi_{a}: E \rightarrow E_{a}$
 
 - \textbf{Party A} 
 \newline
@@ -101,7 +100,16 @@ Initially there will be 4 global public parameters:
 10. Compute $k$ = $j_{ba}$ = j-invariant($E_{ba}$)
 \newline
 
+
 \par Notice that since both curves are isogneous to each other, they will have the same j-invariant. As such, the shared key $k$ calculated by both parties will be the same.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=1.02\linewidth]{sidh}
+\caption{Visual Representation of the Supersingular Isogeny Diffie-Hellman}
+\label{fig:sidh}
+\end{figure}
+
 
 \subsection{Parameter Selection}
 \label{sec:params}
@@ -116,6 +124,8 @@ where $\tau$ is a distortion map from $E(F_{p^2})\rightarrow E(F_{p^2}) : (x,y) 
 While SIDH seem very promising, there are still some issues that remain to be solved. Current implementations assume both parties are honest peers, and thus, an misbehaving/attacking party could leak information and weaken then security of the scheme. Another issue is the lack of crypto-analitic research done for this scheme, as the literature in which one can rely is rather limited.
 \par Being a relatively new field, there are still many unknowns as to what supersingular isogenies can also be used for. Aside from key exchange, some researchers have also worked on applying supersingular curves to build digital signature schemes \cite{jao2014isogeny,sun2014toward}. 
 \par However, with the recent promising developments in SIDH, work with supersingular curves is bound to gather more research in the upcoming years. 
+\par Steps 1-5
+Steps 6-10
 
 
 

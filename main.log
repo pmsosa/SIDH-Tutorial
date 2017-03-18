@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2016.1.24)  17 MAR 2017 22:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2016.1.24)  18 MAR 2017 08:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -170,7 +170,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 69--110
 
  []
 
-[2 <./sidh.png>] (./main.bbl
+[2 <./sidh.png>]
+Underfull \vbox (badness 7925) has occurred while \output is active []
+
+ (./main.bbl
 Underfull \hbox (badness 1019) in paragraph at lines 8--11
 []\OT1/cmr/m/n/10 D. Jao and L. De Feo, ``To-wards quantum-
  []
@@ -181,7 +184,7 @@ Underfull \hbox (badness 2828) in paragraph at lines 13--16
 e\OT1/cmr/m/n/10 ,
  []
 
-
+[3]
 Underfull \hbox (badness 4699) in paragraph at lines 32--35
 []\OT1/cmr/m/n/10 D. Jao and V. Soukharev, ``Isogeny-based
  []
@@ -191,14 +194,14 @@ Underfull \hbox (badness 2088) in paragraph at lines 37--40
 []\OT1/cmr/m/n/10 X. Sun, H. Tian, and Y. Wang, ``To-ward
  []
 
-[3]) [4
+) [4
 
 ] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 1510 strings out of 493054
- 21299 string characters out of 6138321
- 86475 words of memory out of 5000000
- 5038 multiletter control sequences out of 15000+600000
+ 1509 strings out of 493054
+ 21280 string characters out of 6138321
+ 87472 words of memory out of 5000000
+ 5037 multiletter control sequences out of 15000+600000
  8241 words of font info for 29 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,8n,23p,692b,213s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -215,7 +218,7 @@ exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2015
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2015/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2015/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmti10.pfb>
-Output written on main.pdf (4 pages, 240483 bytes).
+Output written on main.pdf (4 pages, 240605 bytes).
 PDF statistics:
  76 PDF objects out of 1000 (max. 8388607)
  53 compressed objects within 1 object stream

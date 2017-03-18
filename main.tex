@@ -16,7 +16,7 @@ This paper aims to give researchers an approachable introduction to the Supersin
 As studies in the area of quantum computing seem to yield promising results, cryptography researchers are seeking new cryptosystems that could withstand attacks from such machines. While quantum computers do not affect secret key cryptography as much\footnote{It is enough for most secret key cryptographic schemes to increase their key sizes to provide protection against quantum adversaries.}, most of the popular public key cryptosystems become vulnerable \cite{bernstein2009introduction}. 
 \par Most popular public key cryptosystems used today rely on the hardness of the factorization problem. For classical machines, the best known attacks would take exponential time, however, quantum computers are able to do factoring in polynomial time using Shor's algorithm.
 \par As a result, there has been an important push towards the study and implementation of Post-Quantum cryptographic protocols in these past few years. This has yielded many different Post-Quantum Cryptographic (PQC) schemes based on lattices, codes, hashes, multivariate equations, and most recently elliptic curves.
-\par This paper will focus on Supersingular Isogenies Diffie-Hellman (SIDH), which is the only PQC algorithm based on elliptic curves. It was created in 2011 by De Feo, Jao and Plut \cite{Jao2011} and has since been implemented and optimized by others. In 2016, researchers at Microsoft published a version of SIDH which ran in constant time and used public keys of size 564 bytes, showing that SIDH had ``strong potential as a PQC candidate"\cite{costello2016}.
+\par This paper will focus on Supersingular Isogenies Diffie-Hellman (SIDH), which is the one of the few PQC algorithm based on elliptic curves. It was created in 2011 by De Feo, Jao and Plut \cite{Jao2011} and has since been implemented and optimized by others. In 2016, researchers at Microsoft published a version of SIDH which ran in constant time and used public keys of size 564 bytes, showing that SIDH had ``strong potential as a PQC candidate"\cite{costello2016}.
 
 \section{Security and Efficiency}
 \paragraph{Security} Although both ECDH and SIDH use elliptic curves, their underlying problem is different. ECDH's hardness rests upon the discrete logarithm problem, whereas SIDH's hardness rests up the difficulty of finding the isogeny mapping between two supersingular elliptic curves with the same number of points. 
@@ -35,7 +35,7 @@ As studies in the area of quantum computing seem to yield promising results, cry
 In this section we will discuss some of the mathematical constructs and finer details necessary to further understand the SIDH-KEX.
 
 \paragraph{Elliptic Curves}
-Similar to other elliptic curve cryptographic schemes, we will assume our chosen elliptic curve $E$ over $F_{p^2}$ to be non-singular and of the Weierstrass form: $y^2 = x^3 + ax + b$.
+Similar to other elliptic curve cryptographic schemes, we will assume our chosen elliptic curve $E$ over $F_{p^2}$ to be non-singular and of the Weierstrass form: $y^2 = x^3 + ax + b$. As such, all point addition and multiplication must be calculated by using the functions defined for these types of curves.
 
 \paragraph{Isogeny} An isogeny is a surjective and homomorphic structure preserving function that maps two groups together. In the case of elliptic curves case, a  isogeny $\phi$ will map points on the domain curve $E$ to points on a co-domain curve $E'$. These isogenies are calculated using V{\'e}lu's formulas \cite{velu1971isogenies} as $\phi: E \rightarrow E/\kappa$, where $\kappa$ is defined as the kernel.
 
@@ -82,7 +82,7 @@ Initially there will be 4 global public parameters:
 \newline
 7. Calculate $S_{ab} = [m_a]P'_a+[n_a]Q'_a$ 
 \newline
-8. $\phi_{ab}=E_{a}\rightarrow E_{ab} = E_{a}/ \langle S_{ba} \rangle $.
+8. $\phi_{ab}=E_{a}\rightarrow E_{ab} = E_{a}/ \langle S_{ab} \rangle $.
 \newline
 9. Compute $k$ = $j_{ab}$ = j-invariant($E_{ab}$)
 \newline
@@ -134,7 +134,7 @@ While SIDH seem very promising, there are still some issues that remain to be so
 
 \bibliographystyle{ieeetr}
 \bibliography{main}
-\nocite{jalali2016quantum}
+
 
 \end{document}
 

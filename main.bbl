@@ -2,29 +2,31 @@
 
 \bibitem{bernstein2009introduction}
 D.~J. Bernstein, ``Introduction to post-quantum cryptography,'' in {\em
-  Post-quantum cryptography}, pp.~1--14, Springer, 2009.
+  Post-Quantum Cryptography}, pp.~1--14, Springer, 2009.
 
 \bibitem{Jao2011}
-D.~Jao and L.~De~Feo, {\em Towards Quantum-Resistant Cryptosystems from
-  Supersingular Elliptic Curve Isogenies}, pp.~19--34.
-\newblock Berlin, Heidelberg: Springer Berlin Heidelberg, 2011.
+D.~Jao and L.~De~Feo, ``Towards quantum-resistant cryptosystems from
+  supersingular elliptic curve isogenies,'' in {\em QCrypto 2011}, pp.~19--34,
+  Springer Berlin Heidelberg, 2011.
 
 \bibitem{costello2016}
 C.~Costello, P.~Longa, and M.~Naehrig, ``Efficient algorithms for supersingular
-  isogeny diffie-hellman.'' Cryptology ePrint Archive, Report 2016/413, 2016.
+  isogeny diffie-hellman,'' in {\em Annual Cryptology Conference},
+  pp.~572--601, Springer, 2016.
 
 \bibitem{delfs2016computing}
 C.~Delfs and S.~D. Galbraith, ``Computing isogenies between supersingular
-  elliptic curves over $\{$$\backslash$ mathbb $\{$F$\}$$\}$ \_p,'' {\em
-  Designs, Codes and Cryptography}, vol.~78, no.~2, pp.~425--440, 2016.
+  elliptic curves over $f_{p}$,'' in {\em Designs, Codes and Cryptography},
+  vol.~78, pp.~425--440, Springer, 2016.
 
 \bibitem{biasse2014quantum}
 J.-F. Biasse, D.~Jao, and A.~Sankar, ``A quantum algorithm for computing
   isogenies between supersingular elliptic curves,'' in {\em International
   Conference in Cryptology in India}, pp.~428--442, Springer, 2014.
 
-\bibitem{openssl}
-D.~Stebila, ``openssl,'' 2016.
+\bibitem{velu1971isogenies}
+J.~V{\'e}lu, ``Isog{\'e}nies entre courbes elliptiques,'' in {\em CR Acad. Sci.
+  Paris S{\'e}r. AB}, vol.~273, pp.~A238--A241, 1971.
 
 \bibitem{jao2014isogeny}
 D.~Jao and V.~Soukharev, ``Isogeny-based quantum-resistant undeniable
@@ -33,7 +35,11 @@ D.~Jao and V.~Soukharev, ``Isogeny-based quantum-resistant undeniable
 
 \bibitem{sun2014toward}
 X.~Sun, H.~Tian, and Y.~Wang, ``Toward quantum-resistant strong designated
-  verifier signature,'' {\em International Journal of Grid and Utility
-  Computing 4}, vol.~5, no.~2, pp.~80--86, 2014.
+  verifier signature,'' in {\em International Journal of Grid and Utility
+  Computing 4}, vol.~5, pp.~80--86, Inderscience Publishers Ltd, 2014.
+
+\bibitem{jalali2016quantum}
+A.~Jalali, ``Quantum-resistant diffie-hellman key exchange from supersingular
+  elliptic curve isogenies,'' 2016.
 
 \end{thebibliography}

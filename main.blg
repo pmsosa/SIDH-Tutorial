@@ -3,46 +3,48 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
 The style file: ieeetr.bst
 Database file #1: main.bib
-Warning--can't use both author and editor fields in Jao2011
-You've used 8 entries,
+Warning--can't use both volume and number fields in delfs2016computing
+Warning--can't use both volume and number fields in sun2014toward
+Warning--empty journal in jalali2016quantum
+You've used 9 entries,
             1876 wiz_defined-function locations,
-            525 strings with 4902 characters,
-and the built_in function-call counts, 2234 in all, are:
-= -- 228
-> -- 65
+            530 strings with 4911 characters,
+and the built_in function-call counts, 2871 in all, are:
+= -- 292
+> -- 69
 < -- 0
-+ -- 25
-- -- 17
-* -- 144
-:= -- 298
++ -- 27
+- -- 18
+* -- 188
+:= -- 365
 add.period$ -- 9
-call.type$ -- 8
-change.case$ -- 7
+call.type$ -- 9
+change.case$ -- 9
 chr.to.int$ -- 0
-cite$ -- 9
-duplicate$ -- 114
-empty$ -- 235
-format.name$ -- 17
-if$ -- 558
+cite$ -- 12
+duplicate$ -- 168
+empty$ -- 306
+format.name$ -- 18
+if$ -- 715
 int.to.chr$ -- 0
-int.to.str$ -- 8
-missing$ -- 7
-newline$ -- 28
-num.names$ -- 8
-pop$ -- 37
+int.to.str$ -- 9
+missing$ -- 9
+newline$ -- 30
+num.names$ -- 9
+pop$ -- 50
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 86
+skip$ -- 118
 stack$ -- 0
-substring$ -- 163
-swap$ -- 47
+substring$ -- 235
+swap$ -- 68
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 1
-while$ -- 26
-width$ -- 9
-write$ -- 79
-(There was 1 warning)
+warning$ -- 3
+while$ -- 33
+width$ -- 10
+write$ -- 91
+(There were 3 warnings)
